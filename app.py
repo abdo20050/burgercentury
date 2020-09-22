@@ -30,8 +30,6 @@ def index():
             return render_template("index.html",ww="أدخل جميع البيانات")
         if len(lastNum)>2:
             return render_template("index.html",ww="أدخل أخر رقمين بس من هويتك يالحبيب")
-        if lastNum=="90":
-            return render_template("index.html",ww="لا انت تروح لحالك")
         if int(lastNum)>90:
             return render_template("index.html",ww="والله الله يعينك... انطرلك {} سنوات وبعدها فكر في العرض".format(int(lastNum)-90))
         db.child(city).child("nums").child(lastNum).child(phone).set("{}: {}".format(name,phone))
