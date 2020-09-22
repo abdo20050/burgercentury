@@ -1,0 +1,15 @@
+body{
+  padding: 50px;
+  background: rgb(225, 228, 225);
+  text-align: center;
+  font: black;
+}
+
+h1{
+  padding-bottom: 10px;
+}
+
+padding_div{
+  padding: 4px;
+}
+
