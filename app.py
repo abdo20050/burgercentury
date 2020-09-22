@@ -22,6 +22,7 @@ app = Flask(__name__)
 @app.route('/', methods=['GET','Post'])
 def index():
     if request.method=='POST':
+        city=request.form['city']
         phone=request.form['phone']
         lastNum=request.form['last_numbers']
         name=request.form['Name']
@@ -33,8 +34,8 @@ def index():
             return render_template("index.html",ww="لا انت تروح لحالك")
         if int(lastNum)>90:
             return render_template("index.html",ww="والله الله يعينك... انطرلك {} سنوات وبعدها فكر في العرض".format(int(lastNum)-90))
-        db.child("nums").child(lastNum).child(phone).set("{}: {}".format(name,phone))
-        listNum = db.child("nums").get()
+        db.child(city).child("nums").child(lastNum).child(phone).set("{}: {}".format(name,phone))
+        listNum = db.child(city).child("nums").get()
         
         finalNums = getList(lastNum,listNum)
         if finalNums== []:
