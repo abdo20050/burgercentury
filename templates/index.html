@@ -2,51 +2,63 @@
 <html lang="en" dir="ltr">
 
 <head>
-  <meta charset="utf-8">
-  <title>بطنين بالحلال</title>
-  <link rel="stylesheet" href="https://burgercompany.herokuapp.com/css/style">
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
-    integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <meta charset="utf-8">
+    <title>بطنين بالحلال</title>
+    <link rel="stylesheet" href="/static/styles.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <style>
+        body {
+            padding: 50px;
+            background-color: rgb(134, 202, 131);
+            text-align: center !important;
+            font: black;
+        }
+        
+        h1 {
+            color: black;
+            padding-bottom: 10px;
+        }
+    </style>
 </head>
 
 <body id="body">
-  <img src="https://pbs.twimg.com/media/EicexCQWAAAFBov.jpg:small" width="250px" style="padding-bottom: 10px;">
-  <h1>جايين نجمع بطنين بالحلال</h1>
-  <form action="/" method="post">
-    <select name="city" placeholder="المدينة" style="width:185px;">
+    <img src="https://pbs.twimg.com/media/EicexCQWAAAFBov.jpg:small" width="250px" style="padding-bottom: 10px;">
+    <h1>جايين نجمع بطنين بالحلال</h1>
+    <form action="/" method="post">
+        <select name="city" placeholder="المدينة" style="width:185px;">
       <option value="jaddah">جدة</option>
       <option value="riyadh">الرياض</option>
     </select><br>
-    <div id="padding_div"> </div>
-    <input type="tel" name="phone" placeholder="رقم الجوال"><br>
-    <div id="padding_div"> </div>
-    <input type="text" name="Name" placeholder="الإسم"><br>
-    <div id="padding_div"> </div>
-    <input type="number" name="last_numbers" placeholder="آخر رقمين من الهوية" ><br>
-    <div id="padding_div"> </div>
-    <input class="btn btn-lg btn-primary" type="submit" name="submit" value="بحث">
-  </form>
-  
-  <!-- The core Firebase JS SDK is always required and must be listed first -->
-  <script src="/__/firebase/7.21.0/firebase-app.js"></script>
+        <div id="padding_div" style="padding: 4px;"> </div>
+        <input type="tel" name="phone" placeholder="رقم الجوال"><br>
+        <div id="padding_div" style="padding: 4px;"> </div>
+        <input type="text" name="Name" placeholder="الإسم"><br>
+        <div id="padding_div" style="padding: 4px;"> </div>
+        <input type="number" name="last_numbers" placeholder="آخر رقمين من الهوية"><br>
+        <div id="padding_div" style="padding: 4px;"> </div>
+        <input class="btn btn-lg btn-primary" type="submit" name="submit" value="بحث">
+    </form>
 
-  <!-- TODO: Add SDKs for Firebase products that you want to use
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <script src="/__/firebase/7.21.0/firebase-app.js"></script>
+
+    <!-- TODO: Add SDKs for Firebase products that you want to use
      https://firebase.google.com/docs/web/setup#available-libraries -->
-  <script src="/__/firebase/7.21.0/firebase-analytics.js"></script>
+    <script src="/__/firebase/7.21.0/firebase-analytics.js"></script>
 
-  <!-- Initialize Firebase -->
-  <script src="/__/firebase/init.js"></script>
+    <!-- Initialize Firebase -->
+    <script src="/__/firebase/init.js"></script>
 
-  <h3 id="wText" style="color: black; padding-top: 10px;">{{ww}}</h3>
-  <div class="container-lg" style="padding-top: 20px;">
-    <ul class="list-group" style="color: #000;">
-    {%for l in t %}
-    <li class="list-group-item">
-      {{l}}
-    </li>
-    {%endfor%}
-    </ul>
-  </div>
+    <h3 id="wText" style="color: black; padding-top: 10px;">{{ww}}</h3>
+    <div class="container-lg" style="padding-top: 20px;">
+        <ul class="list-group" style="color: #000;">
+            {%for l in t %}
+            <li class="list-group-item">
+                {{l}}
+            </li>
+            {%endfor%}
+        </ul>
+    </div>
 </body>
 
 </html>
