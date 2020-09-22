@@ -28,7 +28,7 @@ def index():
         name=request.form['Name']
         if lastNum=="" or phone== "" or name=="":
             return render_template("index.html",ww="أدخل جميع البيانات")
-        if len(lastNum)>2:
+        if (len(lastNum)!=2):
             return render_template("index.html",ww="أدخل أخر رقمين بس من هويتك يالحبيب")
         if int(lastNum)>90:
             return render_template("index.html",ww="والله الله يعينك... انطرلك {} سنوات وبعدها فكر في العرض".format(int(lastNum)-90))
